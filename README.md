@@ -42,7 +42,7 @@ mvn -e clean install verify
 * Swagger UI: [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html)
 * H2 Console: [`http://localhost:8080/h2-console`](http://localhost:8080/h2-console)
 
-## Usecases
+## Use cases
 
 ### 1. Get a random movie
 ```
