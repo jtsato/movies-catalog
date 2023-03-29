@@ -1,4 +1,4 @@
-# Movies Battle
+# Movies Catalog
 
 ## Prerequisites
 
@@ -39,34 +39,24 @@ mvn -e clean install verify
 
 ## Available Endpoints
 
-* Swagger UI: [`http://localhost:8081/swagger-ui.html`](http://localhost:8081/swagger-ui.html)
-* H2 Console: [`http://localhost:8081/h2-console`](http://localhost:8081/h2-console)
+* Swagger UI: [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html)
+* H2 Console: [`http://localhost:8080/h2-console`](http://localhost:8080/h2-console)
 
 ## Usecases
 
-### 1. Start the game
+### 1. Get a random movie
 ```
-curl -X POST "http://localhost:8081/v1/games" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -d ""
-```
-
-### 2. End the game
-```
-curl -X PATCH "http://localhost:8081/v1/games" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0"
+curl -X GET "http://localhost:8080/v1/movies/random" -H "accept: */*" -H "Accept-Language: pt_BR"
 ```
 
-### 3. Request a quiz
+### 2. Get all movies count
 ```
-curl -X POST "http://localhost:8081/v1/quizzes" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -d ""
-```
-
-### 4. Answer the quiz
-```
-curl -X POST "http://localhost:8081/v1/bets" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -H "Content-Type: application/json" -d "{\"optionId\":\"tt2576852\"}"
+curl -X GET "http://localhost:8080/v1/movies/count" -H "accept: */*" -H "Accept-Language: pt_BR"
 ```
 
-### 5. Get the ranking
+### 3. Get movie by imdb id
 ```
-curl -X GET "http://localhost:8081/v1/rankings" -H "accept: */*" -H "Accept-Language: pt_BR"
+curl -X GET "http://localhost:8080/v1/movies/byImdbId/tt0468569" -H "accept: */*" -H "Accept-Language: pt_BR"
 ```
 
 ## Solution Structure

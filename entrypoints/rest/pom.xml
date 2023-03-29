@@ -15,7 +15,7 @@
     <packaging>jar</packaging>
 
     <name>Rest Interface</name>
-    <description>Movies Battle Rest Interface</description>
+    <description>Movies Catalog Rest Interface</description>
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

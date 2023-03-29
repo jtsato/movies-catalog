@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author Jorge Takeshi Sato
  */
 
-@DisplayName("Get All Movies Count Controller Test")
+@DisplayName("Get all movies count Controller Test")
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = GetAllMoviesCountController.class)
@@ -38,7 +38,7 @@ class GetAllMoviesCountControllerTest {
     @MockBean
     private WebRequest webRequest;
 
-    @DisplayName("Successful to get all movies count")
+    @DisplayName("Successful to Get all movies count")
     @Test
     void SuccessfulToGetAllMoviesCount() throws Exception {
         // Arrange

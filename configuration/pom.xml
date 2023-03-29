@@ -12,7 +12,7 @@
     <packaging>jar</packaging>
 
     <name>Configuration</name>
-    <description>Movies Battle Configuration</description>
+    <description>Movies Catalog Configuration</description>
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

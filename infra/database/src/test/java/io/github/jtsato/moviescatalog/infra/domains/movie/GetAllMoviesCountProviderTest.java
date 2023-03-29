@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Jorge Takeshi Sato
  */
 
-@DisplayName("Get All Movies Count Provider Test")
+@DisplayName("Get all movies count Provider Test")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @DataJpaTest
 @Import({GetAllMoviesCountProvider.class})
@@ -27,7 +27,7 @@ class GetAllMoviesCountProviderTest {
     @Autowired
     private MovieRepository movieRepository;
 
-    @DisplayName("Get All Movies Count")
+    @DisplayName("Get all movies count")
     @Test
     void successfulToGetAllMoviesCount() {
         // Arrange

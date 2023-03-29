@@ -16,7 +16,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @FunctionalInterface
 public interface GetAllMoviesCountApiMethod {
 
-    @Operation(operationId = "getAllMoviesCount", summary = "Get all Movies Count")
+    @Operation(operationId = "getAllMoviesCount", summary = "Get all movies count")
 
     @Parameter(name = "Accept-Language",
                example = "pt_BR",

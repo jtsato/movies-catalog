@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
  * @author Jorge Takeshi Sato
  */
 
-@DisplayName("Get All Movies Count Use Case Test")
+@DisplayName("Get all movies count Use Case Test")
 class GetAllMoviesCountUseCaseTest {
 
     @Mock private final GetAllMoviesCountGateway getAllMoviesCountGateway = Mockito.mock(GetAllMoviesCountGateway.class);
@@ -24,7 +24,7 @@ class GetAllMoviesCountUseCaseTest {
     @InjectMocks
     private final GetAllMoviesCountUseCase getAllMoviesCountUseCase = new GetAllMoviesCountUseCaseImpl(getAllMoviesCountGateway);
 
-    @DisplayName("Fail to get all movies count with invalid action")
+    @DisplayName("Fail to Get all movies count with invalid action")
     @Test
     void failToGetAllMoviesCountWithInvalidAction() {
         // Arrange
