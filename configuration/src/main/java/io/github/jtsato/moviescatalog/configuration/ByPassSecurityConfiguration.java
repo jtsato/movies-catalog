@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
-import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
 /**
@@ -16,28 +17,19 @@ import org.springframework.security.web.SecurityFilterChain;
 @Profile({"test", "dev"})
 @EnableWebSecurity
 @Configuration
-public class ByPassSecurityConfiguration  {
+public class ByPassSecurityConfiguration {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(final HttpSecurity httpSecurity)
-        throws Exception {
-        httpSecurity
-                .csrf()
-                .disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .authorizeHttpRequests()
-                .requestMatchers("/**")
-                .permitAll()
-                .anyRequest()
-                .anonymous();
-
-        httpSecurity
-                .headers()
-                .frameOptions()
-                .sameOrigin();
-
-        return httpSecurity.build();
+    public SecurityFilterChain securityFilterChain(final HttpSecurity httpSecurity) {
+        try {
+            httpSecurity
+                    .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+                    .csrf(AbstractHttpConfigurer::disable)
+                    .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
+            return httpSecurity.build();
+        } catch (final Exception exception) {
+            throw new IllegalStateException("Unable to configure test security", exception);
+        }
     }
 
     @Bean

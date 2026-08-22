@@ -1,6 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>io.github.jtsato</groupId>
+        <artifactId>moviescatalog-application</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
     <groupId>io.github.jtsato</groupId>
     <artifactId>moviescatalog-core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -12,24 +19,24 @@
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+        <java.version>25</java.version>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
         <jakarta.inject.version>2.0.1</jakarta.inject.version>
-        <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
+        <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
         <glassfish.expressly.version>5.0.0</glassfish.expressly.version>
-        <lombok.version>1.18.26</lombok.version>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
-        <commons-collections.version>20040616</commons-collections.version>
-        <junit-jupiter-engine.version>5.9.2</junit-jupiter-engine.version>
-        <assertj-core.version>3.24.2</assertj-core.version>
-        <mockito-junit-jupiter.version>5.1.1</mockito-junit-jupiter.version>
-        <pitest-maven.version>1.9.10</pitest-maven.version>
-        <pitest-junit5-plugin.version>1.1.2</pitest-junit5-plugin.version>
-        <jacoco.agent.version>0.8.8</jacoco.agent.version>
-        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+        <lombok.version>1.18.44</lombok.version>
+        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <junit-jupiter-engine.version>6.0.3</junit-jupiter-engine.version>
+        <assertj-core.version>3.27.7</assertj-core.version>
+        <mockito-junit-jupiter.version>5.20.0</mockito-junit-jupiter.version>
+        <pitest-maven.version>1.23.0</pitest-maven.version>
+        <pitest-junit5-plugin.version>1.2.3</pitest-junit5-plugin.version>
+        <jacoco.agent.version>0.8.14</jacoco.agent.version>
+        <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -65,11 +72,6 @@
             <version>${commons-lang3.version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>${commons-collections.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit-jupiter-engine.version}</version>
@@ -102,6 +104,22 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>

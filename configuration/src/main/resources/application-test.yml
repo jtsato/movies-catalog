@@ -4,8 +4,6 @@ logging:
     org.springframework.web: warn
     io.swagger.models.parameters.AbstractSerializableParameter: error
 server:
-  http2:
-    enabled: true
   port: ${PORT:8080}
   error:
     whitelabel:
@@ -51,9 +49,6 @@ spring:
           provider_disables_autocommit: false
     hibernate:
       ddl-auto: create-drop
-  data:
-    rest:
-      detection-strategy: annotated
   h2:
     console:
       enabled: true
