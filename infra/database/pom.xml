@@ -25,8 +25,8 @@
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
-        <lombok.version>1.18.44</lombok.version>
-        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <lombok.version>1.18.46</lombok.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
         <spring-data-jpa-entity-graph.version>3.2.2</spring-data-jpa-entity-graph.version>
         <p6spy.version>3.9.1</p6spy.version>
         <pitest-maven.version>1.23.0</pitest-maven.version>

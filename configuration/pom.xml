@@ -20,7 +20,8 @@
         <java.version>25</java.version>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
-        <archunit-junit5.version>1.4.1</archunit-junit5.version>
+        <archunit-junit5.version>1.5.0</archunit-junit5.version>
+        <lombok.version>1.18.46</lombok.version>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <sonar.coverage.exclusions>
             **/src/**/configuration/**,

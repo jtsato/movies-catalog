@@ -28,7 +28,7 @@
         <junit-jupiter-engine.version>6.0.3</junit-jupiter-engine.version>
         <pitest-maven.version>1.23.0</pitest-maven.version>
         <pitest-junit5-plugin.version>1.2.3</pitest-junit5-plugin.version>
-        <lombok.version>1.18.44</lombok.version>
+        <lombok.version>1.18.46</lombok.version>
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <jacoco.agent.version>0.8.14</jacoco.agent.version>
         <sonar.organization>jtsato</sonar.organization>
